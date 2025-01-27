@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker'
+
 export const fakePosts = [
   {
     title: 'redundant system',
@@ -523,3 +525,10 @@ export const archivedPosts = [
     body: 'Use the open-source RSS matrix, then you can connect the auxiliary port!'
   }
 ]
+
+export function createRandomPost() {
+  return {
+    title: `${faker.hacker.adjective()} ${faker.hacker.noun()}`,
+    body: faker.hacker.phrase()
+  }
+}
