@@ -1,5 +1,7 @@
 const { faker } = require('@faker-js/faker')
 
+const numPosts = 100
+
 function createRandomPost() {
   return {
     title: `${faker.hacker.adjective()} ${faker.hacker.noun()}`,
@@ -7,4 +9,4 @@ function createRandomPost() {
   }
 }
 
-console.log(Array.from({ length: 30 }, () => createRandomPost()))
+console.log(Array.from({ length: numPosts }, () => createRandomPost()))
