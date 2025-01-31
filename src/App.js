@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { archivedPosts, createRandomPost } from './data/global'
 import { PostProvider, usePosts } from './PostProvider'
+import Test from './Test'
+
 function App() {
   const [isFakeDark, setIsFakeDark] = useState(true)
 
@@ -105,14 +107,17 @@ function List() {
   const { posts } = usePosts()
 
   return (
-    <ul>
-      {posts.map((post, i) => (
-        <li key={i}>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {posts.map((post, i) => (
+          <li key={i}>
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
+      <Test />
+    </>
   )
 }
 
